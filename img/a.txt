@@ -1,0 +1,32 @@
+现在 执行hexo server，访问localhost:4000看到的页面只是这个程序未编译之前的原码。
+要想它变成网页格式还需要再安装它的编绎器
+那我们现在执行
+npm install 来安装将程序编译成网页的依赖程序。
+
+
+15
+目录里这时会多
+了一个public文件
+夹，里面就是传统
+的静态的html文件。
+(这些文件可以上传任何web服务器上，生成你的博客网站)
+
+我们这里将用hexo自动同步github命令来将这些文件传到github page虚拟服务器下。
+具体操作：
+在git环境下执行 hexo d
+
+16执行后本地目录下多了一个.deploy
+hexo d命令分解（相当于在git下执行了以下六个步骤。）
+1.copy public文件夹到.deploy
+2.在.deploy下执行了git init(建立本地的工作版本库)
+3 git add . (加入版本版本库文件，这里的“.”代表要添加的所有文件和目录)
+4.git commit -m "first commit" (这里是提交文件修改)
+5.git remote add origin git@github.com:yeapple886/zhenglinjie.github.io.git
+（设定和哪个版本库建立链接，与之前_config.yml配置文件是相吻合的。另然第一次会这里第一次会执行，以后就不会再执行了。）另外）
+6.git push -u origin master （把它同步到master主干上）
+
+16.
+
+是用自已帐户建成的可以直接放在master下以后可以直接用（username.github.io）访问。
+因为之前主干上已经有一个站点，
+

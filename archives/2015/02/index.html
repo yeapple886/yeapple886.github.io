@@ -113,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						
+						<a href="/tags/git-hexo/" style="font-size: NaNpx;">git hexo</a>
 					</div>
 				</section>
 				
@@ -313,6 +313,58 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 
 <p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-整理下hexo学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/02/08/整理下hexo学习笔记/" class="article-date">
+  	<time datetime="2015-02-08T11:52:01.000Z" itemprop="datePublished">Feb 8 2015</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-hexo/">git hexo</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/08/整理下hexo学习笔记/">hexo学习笔记整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这里是周未的学习笔记，有缺漏的地方大家帮助补充，共同学习.谢谢!<br><img src="http://yeapple886.github.io/img/1.png"><br><em>1.在git上新建一个仓库，添加新项目的名称（跟GIT的用户名一致）<br><img src="http://yeapple886.github.io/img/2.png"><br><img src="http://yeapple886.github.io/img/3.png">
+</em>3然后在本地创建 一个工作目录安装hexo<br><img src="http://yeapple886.github.io/img/4.png"><br><em>4.执行hexo初始化,然后会看到本地目录新增了hexo的程序<br><img src="http://yeapple886.github.io/img/5.png">
+</em>5.现在执行hexo server，访问localhost:4000会看到的页面程序只是个未编译之前的原码。<br>要想它变成网页格式还需要再安装它的编绎器.现在再执行 npm install 来安装将程序编译成网页的依赖程序。<br><img src="http://yeapple886.github.io/img/6.png"><br><em>编译之后再记问本地就可以看到本土安装好的HEXO博客了<br><img src="http://yeapple886.github.io/img/7.png">
+</em>模板文件夹和配置文件。source是我们文章存放的目录<br><img src="http://yeapple886.github.io/img/8.png"><br><em>打开配置文件，在文档底部添加本地与GIT同步的关键配置<br><img src="http://yeapple886.github.io/img/9.png">
+</em>现在试着添加一篇文章 执行hexo n “文章名”<br><img src="http://yeapple886.github.io/img/10.png"><br>*现在再加到本地source文件夹里可以看到刚刚新增的文章了。<br><img src="http://yeapple886.github.io/img/11.png"><br>打开编辑内容<br><img src="http://yeapple886.github.io/img/13.png"><br>12.访问localhost:4000 就可以看到刚刚增加的文章了,下一步就是将本地站点同步到GIT<br><img src="http://yeapple886.github.io/img/14.png"><br>本地右键-&gt;git bash 打开GIT执行hexo g 把本地数据生静态页面<br><img src="http://yeapple886.github.io/img/15.png"><br>目录里这时会多了一个public文件<br>夹，里面就是传统的静态的html文件。<br>(这些文件可以上传任何web服务器上，生成你的博客网站)<br>这里将用hexo自动同步github命令来将这些文件传到github page虚拟服务器下<br>在git环境下执行 hexo d<br>这时候我们的hexo blog的数据就已经同步到git上了<br>执行后本地目录下会多一个.deploy 也是本地的版本库文件</p>
+<p>——————————- 我是泼水的分隔线 —————————————-</p>
+<p>hexo d命令分解（相当于在git下执行了以下六个步骤。）<br>1.copy public文件夹到.deploy<br>2.在.deploy下执行了git init(建立本地的工作版本库)<br>3 git add . (加入版本版本库文件，这里的“.”代表要添加的所有文件和目录)<br>4.git commit -m “first commit” (这里是提交文件修改)<br>5.git remote add origin git@github.com:yeapple886/zhenglinjie.github.io.git<br>（设定和哪个版本库建立链接，与之前_config.yml配置文件是相吻合的。另然第一次会这里第一次会执行，以后就不会再执行了。）另外）<br>6.git push -u origin master （把它同步到master主干上）<br><img src="http://yeapple886.github.io/img/16.png"><br><img src="http://yeapple886.github.io/img/12.png"><br><img src="http://yeapple886.github.io/img/19.png"><br>然后要做两步<br>1.回到git网页上，在分支管时的地方选择master,<br>2.点到项目进入setting页面 确认default branch 选择的也是master<br>这时候我们会看到github pages下显示<br>your ste is published at ….这时候你的blog就已经成功建成了。</p>
+<p><img src="http://yeapple886.github.io/img/17.png"><br><img src="http://yeapple886.github.io/img/18.png"><br>以上是github pages站点建立的说明。<br>github pages 有种模式：<br>1.project pages<br>在二级目录下的站点，可以建立多个。<br>域名为user.github.io/projectname.<br>projectname就是我们提交的站点。分支要设置为 gh-pages;</p>
+<p>2.user $ oraganization pages<br>（用户名.github.io）是唯一的，只能设置一个，并且只能在主干<br>master下。且用户名必需与git用户名一致。</p>
+<p>…..</p>
 
       
     </div>
