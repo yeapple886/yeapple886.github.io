@@ -1,0 +1,22 @@
+{
+  "name": "yeapple886.github.io",
+  "version": "1.0.0",
+  "description": "hexo站点",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 8000 -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeapple886/yeapple886.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeapple886/yeapple886.github.io/issues"
+  },
+  "homepage": "https://github.com/yeapple886/yeapple886.github.io#readme",
+  "devDependencies": {
+    "http-server": "^0.8.5"
+  }
+}
